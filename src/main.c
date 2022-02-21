@@ -10,23 +10,32 @@ int main(int argc, char const **argv)
     }
     out_wcat c;
     int skip = 1, print_ln = false, print_tab = false;
-    if (strcmp(argv[1], "--ln") == 0)
-        print_ln = true, skip++;
-    if (strcmp(argv[1], "--tab") == 0)
-        print_tab = true, skip++;
-    if (strcmp(argv[1], "--help") == 0)
+    if (argc >= 3)
     {
-        puts(help);
-        return 0;
-    }   
-    if (strcmp(argv[1], "--v") == 0)
+        if ((strcmp(argv[1], "--ln") == 0 && strcmp(argv[2], "--tab") == 0) ||
+            (strcmp(argv[2], "--ln") == 0 && strcmp(argv[1], "--tab") == 0))
+            print_ln = true, print_tab = true, skip += 2;
+    }
+    else
     {
-        puts("wcat: v0.1\r\n");
-        return 0;
+        if (strcmp(argv[1], "--ln") == 0)
+            print_ln = true, skip++;
+        if (strcmp(argv[1], "--tab") == 0)
+            print_tab = true, skip++;
+        if (strcmp(argv[1], "--help") == 0)
+        {
+            puts(help);
+            return 0;
+        }
+        if (strcmp(argv[1], "--v") == 0)
+        {
+            puts("wcat: v0.1\r\n");
+            return 0;
+        }
     }
     if (skip == argc)
     {
-        fprintf(stderr, "file input required after `--ln` flag\r\n");
+        fprintf(stderr, "input file required after `[OPTION]` flag\r\n");
         return 1;
     }
     init_wcat(&c, argv + skip, argc - skip);
