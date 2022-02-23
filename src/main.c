@@ -10,7 +10,7 @@ int main(int argc, char const **argv)
     }
     out_wcat c;
     int skip = 1, print_ln = false, print_tab = false;
-    if (argc >= 3)
+    if (argc >= 4)
     {
         if ((strcmp(argv[1], "--ln") == 0 && strcmp(argv[2], "--tab") == 0) ||
             (strcmp(argv[2], "--ln") == 0 && strcmp(argv[1], "--tab") == 0))
