@@ -1,1 +1,1 @@
-# wcat: cat for windows
+# wcat: cat for Windows 7+
