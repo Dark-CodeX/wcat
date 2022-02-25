@@ -45,7 +45,7 @@ int init_wcat(out_wcat *data, const char **locs, size_t len)
     data->_M_len = len;
     if (!data->_M_content || !data->_M_locations)
     {
-        fprintf(stderr, "wcat: could not allocate heap memory\r\nreport this issue: <>\r\n");
+        fprintf(stderr, "wcat: could not allocate heap memory\r\nreport this issue: <https://github.com/Dark-CodeX/wcat/issues>\r\n");
         exit(1);
     }
     for (size_t i = 0; i < len; i++)
@@ -115,7 +115,7 @@ int free_wcat(out_wcat *data)
     {
         if (data->_M_content[i].destructor(&data->_M_content[i]) == false || data->_M_locations[i].destructor(&data->_M_locations[i]) == false)
         {
-            fprintf(stderr, "wcat: could not de-allocate heap memory\r\nreport this issue: <>\r\n");
+            fprintf(stderr, "wcat: could not de-allocate heap memory\r\nreport this issue: <https://github.com/Dark-CodeX/wcat/issues>\r\n");
             exit(1);
         }
     }
