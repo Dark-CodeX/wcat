@@ -1,3 +1,11 @@
+/**
+ * @file main.c
+ * @author Tushar Chaurasia (Dark-CodeX)
+ * @brief The C file is a part of https://github.com/Dark-CodeX/wcat.git, written for managing command line.
+ * @copyright Copyright (c) 2022 - Tushar Chaurasia
+ * @license GNU General Public License v3.0
+ */
+
 #include "./out/out.h"
 #include "./help.h"
 
