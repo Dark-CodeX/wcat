@@ -20,13 +20,13 @@ struct out_wcat
     size_t _M_len;
 };
 
-int file_exists(const char *loc);
-int init_wcat(out_wcat *data, const char **locs, size_t len);
-int read_wcat(out_wcat *data);
-size_t print_wcat(out_wcat *data, int print_line, int print_tab);
-int free_wcat(out_wcat *data);
+bool file_exists(const char *loc);
+bool init_wcat(out_wcat *data, const char **locs, size_t len);
+bool read_wcat(out_wcat *data);
+size_t print_wcat(out_wcat *data, bool print_line, bool print_tab);
+bool free_wcat(out_wcat *data);
 
-int file_exists(const char *loc)
+bool file_exists(const char *loc)
 {
     if (!loc)
         return false;
@@ -43,7 +43,7 @@ int file_exists(const char *loc)
     exit(1);
 }
 
-int init_wcat(out_wcat *data, const char **locs, size_t len)
+bool init_wcat(out_wcat *data, const char **locs, size_t len)
 {
     if (!locs || len == 0 || !data)
         return false;
@@ -73,7 +73,7 @@ int init_wcat(out_wcat *data, const char **locs, size_t len)
     return true;
 }
 
-int read_wcat(out_wcat *data)
+bool read_wcat(out_wcat *data)
 {
     if (!data)
         return false;
@@ -82,7 +82,7 @@ int read_wcat(out_wcat *data)
     return true;
 }
 
-size_t print_wcat(out_wcat *data, int print_line, int print_tab)
+size_t print_wcat(out_wcat *data, bool print_line, bool print_tab)
 {
     if (!data)
         return 0;
@@ -98,16 +98,16 @@ size_t print_wcat(out_wcat *data, int print_line, int print_tab)
         {
             if (print_tab == true)
             {
-                if (((__str__ *)data->_M_content[i].str)->src[x] == '\t')
+                if (data->_M_content[i].str.src[x] == '\t')
                 {
                     stdout_len += fprintf(stdout, "^I");
                     x++;
                     continue;
                 }
             }
-            stdout_len += fprintf(stdout, "%c", ((__str__ *)data->_M_content[i].str)->src[x++]);
+            stdout_len += fprintf(stdout, "%c", data->_M_content[i].str.src[x++]);
             if (print_line == true)
-                if (((__str__ *)data->_M_content[i].str)->src[x - 1] == '\n')
+                if (data->_M_content[i].str.src[x - 1] == '\n')
                     stdout_len += fprintf(stdout, "     %lu  ", ln++);
         }
     }
@@ -115,7 +115,7 @@ size_t print_wcat(out_wcat *data, int print_line, int print_tab)
     return stdout_len;
 }
 
-int free_wcat(out_wcat *data)
+bool free_wcat(out_wcat *data)
 {
     if (!data)
         return false;
