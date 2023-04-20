@@ -34,7 +34,7 @@ int main(int argc, char const **argv)
         std::printf("`\033[1;34m%s\033[0m:`\r\n", __out__.loc_N(i).c_str());
         openutils::u8sstring &content = __out__.read_next();
 
-		std::setvbuf(stdout, nullptr, _IOFBF, content.length());
+        std::setvbuf(stdout, nullptr, _IOFBF, content.length());
 
         for (std::size_t j = 0, line_no = 1; j < content.length(); j++)
         {
@@ -55,7 +55,7 @@ int main(int argc, char const **argv)
                 }
             }
         }
-		std::fflush(stdout);
+        std::fflush(stdout);
     }
     return EXIT_SUCCESS;
 }
