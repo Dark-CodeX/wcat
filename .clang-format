@@ -20,4 +20,4 @@ SpaceBeforeParens: ControlStatements
 SpacesInAngles: false
 SpacesInSquareBrackets: false
 SpacesInParentheses: false
-NamespaceEndComments: false
+FixNamespaceComments: false
