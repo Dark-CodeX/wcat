@@ -21,3 +21,4 @@ SpacesInAngles: false
 SpacesInSquareBrackets: false
 SpacesInParentheses: false
 FixNamespaceComments: false
+SortIncludes: false
