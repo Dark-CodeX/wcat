@@ -2,6 +2,7 @@ BasedOnStyle: Microsoft
 IndentWidth: 4
 TabWidth: 4
 UseTab: Never
+NamespaceIndentation: All
 BreakBeforeBraces: Allman
 AllowShortBlocksOnASingleLine: false
 AllowShortFunctionsOnASingleLine: InlineOnly
@@ -19,3 +20,4 @@ SpaceBeforeParens: ControlStatements
 SpacesInAngles: false
 SpacesInSquareBrackets: false
 SpacesInParentheses: false
+NamespaceEndComments: false
