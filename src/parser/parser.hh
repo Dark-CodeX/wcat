@@ -9,11 +9,11 @@
 #ifndef PARSER_DEFINED
 #define PARSER_DEFINED
 
-#include "../help/help.h"
-#include "../out/out.hh"
 #include <openutils/heap-pair/heap-pair.hh>
 #include <openutils/optional/optional.hh>
 #include <openutils/sstring/sstring.hh>
+#include "../out/out.hh"
+#include "../help/help.h"
 
 /// <summary>
 /// FIRST -> --line
@@ -60,6 +60,11 @@ static inline openutils::optional_t<openutils::heap_pair<bool, bool>> parse_argv
         else if (args_i == "--help")
         {
             std::fputs(help, stdout);
+            return openutils::optnull;
+        }
+        else if (args_i == "--libs")
+        {
+            std::fputs(libs, stdout);
             return openutils::optnull;
         }
         else
