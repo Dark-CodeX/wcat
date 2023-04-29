@@ -19,7 +19,7 @@ static const char *libs = "Copyright 2023 Tushar Chaurasia\n"
                           "    1. [sstring v" sstring_version "]      (https://github.com/Dark-CodeX/sstring.git)        Tushar Chaurasia\r\n"
                           "    2. [vector v" vector_t_version "]       (https://github.com/Dark-CodeX/vector.git)         Tushar Chaurasia\r\n"
                           "    3. [heap-pair v" heap_pair_version "]    (https://github.com/Dark-CodeX/heap-pair.git)      Tushar Chaurasia\r\n"
-                          "    4. [optional v" optional_version "]      (https://github.com/Dark-CodeX/optional.git)        Tushar Chaurasia\r\n";
+                          "    4. [optional v" optional_version "]     (https://github.com/Dark-CodeX/optional.git)      Tushar Chaurasia\r\n";
 
 static const char *version = "wcat: v2.0.0\r\n";
 
