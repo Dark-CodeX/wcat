@@ -6,7 +6,7 @@ sources = "./src/wcat_main.cc"
 
 [release]:
 # NOTE: -std=c++20+ is required as this project uses `char8_t`
-args = ["-std=c++23", "-O3", "-DNDEBUG", "-Os", "-Ofast", "-Og", "-s", "-march=native", "-masm=intel", "-flto=auto", "-funroll-all-loops"]
+args = ["-std=c++23", "-O3", "-DNDEBUG", "-Os", "-Ofast", "-Og", "-s", "-march=native", "-masm=att", "-mtune=native", "-fipa-pta", "-ftree-vectorize", "-flto=auto", "-funroll-all-loops"]
 output = ["-o", "./bin/wcat"]
 
 [debug]:
