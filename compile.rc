@@ -1,3 +1,9 @@
+if os == 'windows'
+    depends('g++.exe')
+else
+    depends('g++')
+endif
+
 [compiler]:
     compiler = 'g++'
 
@@ -25,5 +31,14 @@
     sources()
     output()[1]
 
-[install]:
-    cmds = ['sudo', 'mv', './bin/wcat', '/usr/bin/']
+if os == 'linux'
+    [install]:
+        cmds = ['sudo', 'mv', './bin/wcat', '/usr/bin/']
+endif
+
+[all]:
+    release()
+    debug()
+    if os == 'linux'
+        install()
+    endif
