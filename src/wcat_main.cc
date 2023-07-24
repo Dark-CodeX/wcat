@@ -31,7 +31,7 @@ int main(int argc, char const **argv)
     out __out__(argv + skip_index);
     for (std::size_t i = 0; i < __out__.length(); i++)
     {
-        std::printf("`\033[1;34m%s\033[0m:`\r\n", __out__.loc_N(i).c_str());
+        std::printf("\033[1;34m%s\033[0m:\r\n", __out__.loc_N(i).c_str());
         openutils::u8sstring &content = __out__.read_next();
 
         std::setvbuf(stdout, nullptr, _IOFBF, content.length());
